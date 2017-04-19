@@ -2,6 +2,9 @@ var app = angular.module('app', ['ngRoute',"ngStorage"]);
 
     // configure our routes
     app.config(function($routeProvider, $httpProvider) {
+      $httpProvider.defaults.cache = false;
+      $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+      $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
         $routeProvider
 
             // route for the home page
